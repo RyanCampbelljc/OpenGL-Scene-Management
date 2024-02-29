@@ -1,14 +1,3 @@
-QUAD TREE
--Press 'k' to toggle on and off bounding volume/quadtree visual.
--The quad tree has max depth of 3(can be changed at top of quadtree.cpp) top layer is white, then red, then blue
-    There is some z fighting here but you should be able to see the different areas.
-    If you decide to change the tree depth all subsequent sections will be blue.
-
-CAMERA
--w,a,s,d,q,e to move forward,left,back,right,up,down relative to cam direction
--Scroll wheel to change sensitivity
--Hold shift to half the cam velocity
-
-NODES
--Node hierarchies are sorted by color in order to distinguish them from each other. 
--Each hierarchy is a parent node with 3 children
+A scene management assignment in OpenGL
+All nodes in the scene have a spherical bounding volume and depending on its world location is placed in a location in a quad tree.
+Every frame there is camera frustum culling done against the axis aligned bounding box's in the quad tree and the nodes in the quadtree sections that passed. This is a much more efficient rendering method than sending every node in the world through the graphics pipeline every frame.
